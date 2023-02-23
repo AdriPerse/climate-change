@@ -12,12 +12,19 @@ from copy import deepcopy
 # Load data downloaded from data.open-power-system-data.org/renewable_power_plants/2020-08-25
 @st.experimental_memo
 
-# LOAD DATAFRAME
-df = pd.read_csv("temp_gdppc.csv")
+# LOAD DATAFRAME FUNCTION
+def load_data(path):
+    df = pd.read_csv(path)
+    return df
+
 
 # LOAD GEOJSON FILE
 with open("../../data/countries.geojson") as response:
     countries = json.load(response)
+
+# LOAD CLEANED DATA
+df_raw = load_data(path="temp_gdppc.csv")
+df = deepcopy(df_raw)
 
 
 # Add title and header
