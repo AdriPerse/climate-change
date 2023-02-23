@@ -13,7 +13,7 @@ from copy import deepcopy
 @st.experimental_memo
 
 # LOAD DATAFRAME
-df = pd.read_csv("../../data/temp_gdppc.csv")
+df = pd.read_csv("temp_gdppc.csv")
 
 # LOAD GEOJSON FILE
 with open("../../data/countries.geojson") as response:
