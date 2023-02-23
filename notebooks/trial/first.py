@@ -81,7 +81,7 @@ if option == 'Temperature changes':
     if option == 'GDPpc':
         st.plotly_chart(fig2)
 
- Setting up columns
+# Setting up columns
 c1,c3 = st.columns([1,1])
 
 
