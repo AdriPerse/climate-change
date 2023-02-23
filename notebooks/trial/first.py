@@ -9,8 +9,8 @@ from copy import deepcopy
 ###################################################################################
 ### LOADING FILES
 
-# Load data downloaded from data.open-power-system-data.org/renewable_power_plants/2020-08-25
-@st.experimental_memo
+# Load data downloaded from FAO
+@st.cache_data
 
 # LOAD DATAFRAME FUNCTION
 def load_data(path):
@@ -23,7 +23,7 @@ with open("./data/countries.geojson") as response:
     countries = json.load(response)
 
 # LOAD CLEANED DATA
-df_raw = load_data(path="temp_gdppc.csv")
+df_raw = load_data(path="data/temp_gdppc.csv")
 df = deepcopy(df_raw)
 
 
@@ -35,7 +35,7 @@ st.header("Detail per Country")
 #Temperature standard deviation
 fig1 = go.Figure(go.Choroplethmapbox(geojson=countries,
                                     locations=df.Area,
-                                    z= df.Std_temp,
+                                    z= df['Std_temp'],
                                     featureidkey="properties.ADMIN",
                                     colorscale=[[0, 'rgb(255,255,255)'], [0.5, 'rgb(255,136,0)'], [1, 'rgb(255,0,0)']],
                                     zmax = df['Std_temp'].max(),
@@ -77,9 +77,10 @@ option = st.selectbox(
 	('Temperature changes', 'GDPpc', 'Co2',))
 
 if option == 'Temperature changes':
-    st.plotly_chart(fig1)
-    if option == 'GDPpc':
-        st.plotly_chart(fig2)
+	st.plotly_chart(fig1)
+
+if option == 'GDPpc':
+	st.plotly_chart(fig2)
 
 # Setting up columns
 c1,c3 = st.columns([1,1])
