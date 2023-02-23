@@ -73,8 +73,8 @@ fig2.update_layout(mapbox_style="carto-positron",
 fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 option = st.selectbox(
-...     'How would you like to be contacted?',
-...     ('Temperature changes', 'GDPpc', 'Co2'))
+	'Choose the map to see',
+	('Temperature changes', 'GDPpc', 'Co2',))
 
 if option == 'Temperature changes':
     st.plotly_chart(fig1)
