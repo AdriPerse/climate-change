@@ -10,7 +10,8 @@ from copy import deepcopy
 ### LOADING FILES
 
 # Load data downloaded from FAO
-@st.cache_data
+
+
 
 # LOAD DATAFRAME FUNCTION
 def load_data(path):
