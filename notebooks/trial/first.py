@@ -19,7 +19,7 @@ def load_data(path):
 
 
 # LOAD GEOJSON FILE
-with open("../../data/countries.geojson") as response:
+with open("./data/countries.geojson") as response:
     countries = json.load(response)
 
 # LOAD CLEANED DATA
