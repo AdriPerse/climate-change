@@ -155,7 +155,7 @@ fig6.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 # Creating the dropdown selector
 option = st.selectbox(
 	'Choose the map to see',
-	('Temperature change standard deviation from 1961',
+	('Temperature change standard deviation from 1961 per year',
 	'GDP per capita in 2020',
 	'Co2 emissions in 2018 (TONS PER PERSON)',
 	'N2o (Nitrous oxide) emissions in 2018 (TONS PER PERSON)',
@@ -163,7 +163,7 @@ option = st.selectbox(
 	'Total Emissions in 2018 (normalized indicator)'
 	))
 
-if option == 'Temperature changes':
+if option == 'Temperature change standard deviation from 1961 per year':
 	st.plotly_chart(fig1)
 
 if option == 'GDP per capita in 2020':
