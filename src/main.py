@@ -85,8 +85,8 @@ fig3 = go.Figure(go.Choroplethmapbox(geojson=countries,
                                     colorscale=[[0, 'rgb(255, 255, 255)'],
                                                 [0.5, 'rgb(255, 0, 0)'],
                                                 [1, 'rgb(0,0,0)']],
-                                    zmax = df["CO2pc"].max(),
-                                    text = df.Area,
+                                    zmax = df_e["CO2pc"].max(),
+                                    text = df_e.Area,
                                     hovertemplate="Country: %{text}<br> %{z}"'<extra></extra>',
                                     marker_opacity=0.7,
                                     marker_line_width=0))
@@ -97,14 +97,14 @@ fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 #N2o per capita
 fig4 = go.Figure(go.Choroplethmapbox(geojson=countries,
-                                    locations=df.Area,
-                                    z=df["N20pc"],
+                                    locations=df_e.Area,
+                                    z=df_e["N20pc"],
                                     featureidkey="properties.ADMIN",
                                     colorscale=[[0, 'rgb(255, 255, 255)'],
                                                 [0.5, 'rgb(255, 0, 0)'],
                                                 [1, 'rgb(0,0,0)']],
-                                    zmax = df["CO2pc"].max(),
-                                    text = df.Area,
+                                    zmax = df_e["CO2pc"].max(),
+                                    text = df_e.Area,
                                     hovertemplate="Country: %{text}<br> %{z}"'<extra></extra>',
                                     marker_opacity=0.7,
                                     marker_line_width=0))
@@ -116,14 +116,14 @@ fig4.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 #CH4 per capita
 fig5 = go.Figure(go.Choroplethmapbox(geojson=countries,
-                                    locations=df.Area,
-                                    z=df["CH4pc"],
+                                    locations=df_e.Area,
+                                    z=df_e["CH4pc"],
                                     featureidkey="properties.ADMIN",
                                     colorscale=[[0, 'rgb(255, 255, 255)'],
                                                 [0.5, 'rgb(255, 0, 0)'],
                                                 [1, 'rgb(0,0,0)']],
-                                    zmax = df["CH4pc"].max(),
-                                    text = df.Area,
+                                    zmax = df_e["CH4pc"].max(),
+                                    text = df_e.Area,
                                     hovertemplate="Country: %{text}<br> %{z}"'<extra></extra>',
                                     marker_opacity=0.7,
                                     marker_line_width=0))
@@ -135,14 +135,14 @@ fig5.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 #Normalized total emissions
 fig6 = go.Figure(go.Choroplethmapbox(geojson=countries,
-                                    locations=df.Area,
-                                    z=df["Total_n_emissions"],
+                                    locations=df_e.Area,
+                                    z=df_e["Total_n_emissions"],
                                     featureidkey="properties.ADMIN",
                                     colorscale=[[0, 'rgb(255, 255, 255)'],
                                                 [0.5, 'rgb(255, 0, 0)'],
                                                 [1, 'rgb(0,0,0)']],
-                                    zmax = df["Total_n_emissions"].max(),
-                                    text = df.Area,
+                                    zmax = df_e["Total_n_emissions"].max(),
+                                    text = df_e.Area,
                                     hovertemplate="Country: %{text}<br> %{z}"'<extra></extra>',
                                     marker_opacity=0.7,
                                     marker_line_width=0))
