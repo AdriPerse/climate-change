@@ -10,6 +10,7 @@ from copy import deepcopy
 ### LOADING FILES
 
 # Load data downloaded from FAO
+@st.cache
 
 
 
@@ -156,7 +157,7 @@ fig6.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 option = st.selectbox(
 	'Choose the map to see',
 	('Temperature change standard deviation from 1961 per year',
-	'GDP per capita in 2020',
+	'GDP per capita in 2018',
 	'Co2 emissions in 2018 (TONS PER PERSON)',
 	'N2o (Nitrous oxide) emissions in 2018 (TONS PER PERSON)',
 	'CH4 (Methane) emission in 2018 (TONS PER PERSON)',
@@ -166,7 +167,7 @@ option = st.selectbox(
 if option == 'Temperature change standard deviation from 1961 per year':
 	st.plotly_chart(fig1)
 
-if option == 'GDP per capita in 2020':
+if option == 'GDP per capita in 2018':
 	st.plotly_chart(fig2)
 
 if option == 'Co2 emissions in 2018 (TONS PER PERSON)':
@@ -181,7 +182,10 @@ if option == 'CH4 (Methane) emission in 2018 (TONS PER PERSON)':
 if option == 'Total Emissions in 2018 (normalized indicator)':
 	st.plotly_chart(fig6)
 
-# Setting up columns
+###############################################################################
+
+
+# Setting up columns for links
 c1,c3 = st.columns([1,1])
 
 
