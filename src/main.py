@@ -199,19 +199,21 @@ all_sorted['index'] = all_sorted['oce20'] + all_sorted['ter20'] + all_sorted['wa
 all_sorted['index_n'] = (all_sorted['index'] * 100)/255.51
 
 #Widget
-st.markdown('<div style="text-align:center; font-size:20px; font-weight:bold;">CO\u2082 emissions from fossil fuel and cement production and SDG index compliance</div>', unsafe_allow_html=True)
-sdgs = ['CO2'] + ['Index']
+st.markdown('<div style="text-align:center; font-size:20px; font-weight:bold;">Sustainable Development Goals Analysis</div>', unsafe_allow_html=True)
+sdgs = ['CO2 Emissions'] + ['SDG Index']
 sdg = st.selectbox('Choose country option', sdgs)
 
 #Control flow plot
-if sdg == 'CO2':
-    plot = px.bar(all_sorted[:70], x='co20', y='Country', color = 'co20', height=700, range_x=(1.5, 18), width=None, color_continuous_scale = 'RdYlGn_r', orientation='h')
-    st.plotly_chart(plot, use_container_width=True)
+if sdg == 'CO2 Emissions':
+	st.markdown('<div style="text-align:center; font-size:20px; font-weight:bold;">CO\u2082 emissions from fossil fuel and cement production</div>', unsafe_allow_html=True)
+	plot = px.bar(all_sorted[:70], x='co20', y='Country', color = 'co20', height=700, range_x=(1.5, 18), width=None, color_continuous_scale = 'RdYlGn_r', orientation='h')
+	st.plotly_chart(plot, use_container_width=True)
 
-elif sdg == 'Index':
-    all_sorted_index = all_sorted.sort_values("index_n", ascending=False).reset_index(drop=True)
-    plot = px.bar(all_sorted_index[:100], x='index_n', y='Country', color = 'co20',range_x=(40, 100), height=700, width=None, orientation='h', color_continuous_scale = 'RdYlGn_r')
-    st.plotly_chart(plot, use_container_width=True)
+elif sdg == 'SDG Index':
+	st.markdown('<div style="text-align:center; font-size:20px; font-weight:bold;">Sustainable Development Index for Climate Change</div>', unsafe_allow_html=True)
+	all_sorted_index = all_sorted.sort_values("index_n", ascending=False).reset_index(drop=True)
+	plot = px.bar(all_sorted_index[:100], x='index_n', y='Country', color = 'co20',range_x=(40, 100), height=700, width=None, orientation='h', color_continuous_scale = 'RdYlGn_r')
+	st.plotly_chart(plot, use_container_width=True)
 
 st.markdown('#')
 st.markdown('#')
