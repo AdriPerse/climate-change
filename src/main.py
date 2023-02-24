@@ -10,8 +10,8 @@ from copy import deepcopy
 ### LOADING FILES
 
 # Load data downloaded from FAO
-@st.cache
-
+#@st.cache
+#@st.experimental_memo
 
 
 # LOAD DATAFRAME FUNCTION
