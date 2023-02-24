@@ -33,7 +33,7 @@ df_e_raw = load_data(path="data/TOT_EMpc_DF.csv")
 df_e = deepcopy(df_e_raw)
 
 # LOAD SDG DATA
-all_sorted_raw = load_data(path="/data/all_sorted.csv")
+all_sorted_raw = load_data(path="data/all_sorted.csv")
 all_sorted = deepcopy(all_sorted_raw)
 
 # Format the page with less spaces on the side
