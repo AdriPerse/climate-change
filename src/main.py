@@ -32,6 +32,10 @@ df = deepcopy(df_raw)
 df_e_raw = load_data(path="data/TOT_EMpc_DF.csv")
 df_e = deepcopy(df_e_raw)
 
+# LOAD SDG DATA
+all_sorted_raw = load_data(path="/data/all_sorted.csv")
+all_sorted = deepcopy(all_sorted_raw)
+
 # Format the page with less spaces on the side
 st.set_page_config(layout="wide")
 
@@ -183,8 +187,37 @@ if option == 'Total Emissions in 2018 (normalized indicator)':
 	st.plotly_chart(fig6)
 
 ###############################################################################
+st.markdown('#')
+st.markdown('#')
+st.markdown('#')
+st.markdown('#')
 
+#Prepare data plot
+all_sorted.drop([0], axis = 0, inplace=True, errors = 'ignore')
+all_sorted.drop([1], axis = 0, inplace=True, errors = 'ignore')
+all_sorted['index'] = all_sorted['oce20'] + all_sorted['ter20'] + all_sorted['wat20']
+all_sorted['index_n'] = (all_sorted['index'] * 100)/255.51
 
+#Widget
+st.markdown('<div style="text-align:center; font-size:20px; font-weight:bold;">CO\u2082 emissions from fossil fuel and cement production and SDG index compliance</div>', unsafe_allow_html=True)
+sdgs = ['CO2'] + ['Index']
+sdg = st.selectbox('Choose country option', sdgs)
+
+#Control flow plot
+if sdg == 'CO2':
+    plot = px.bar(all_sorted[:70], x='co20', y='Country', color = 'co20', height=700, range_x=(1.5, 18), width=None, color_continuous_scale = 'RdYlGn_r', orientation='h')
+    st.plotly_chart(plot, use_container_width=True)
+
+elif sdg == 'Index':
+    all_sorted_index = all_sorted.sort_values("index_n", ascending=False).reset_index(drop=True)
+    plot = px.bar(all_sorted_index[:100], x='index_n', y='Country', color = 'co20',range_x=(40, 100), height=700, width=None, orientation='h', color_continuous_scale = 'RdYlGn_r')
+    st.plotly_chart(plot, use_container_width=True)
+
+st.markdown('#')
+st.markdown('#')
+st.markdown('#')
+st.markdown('#')
+#####################################################################
 # Setting up columns for links
 c1,c3 = st.columns([1,1])
 

@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import json
 import numpy as np
 from copy import deepcopy
-
+st.set_page_config(layout="wide")
 ###################################################################################
 ### LOADING FILES
 
