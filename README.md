@@ -24,7 +24,7 @@ We have chosen different values per country to better study the phenomenon and s
 ### Technologies
 * Python
 * Plotly
-* Pandas, phycharm
+* Pandas
 * geojson
 
 ## Project Description
@@ -35,6 +35,6 @@ This project was a part of our bootcamp in Constructor Learning. This was an ass
 ### [Fao](https://www.fao.org/faostat/en/#data/GT)
 ### [UN](https://www.sdgindex.org/)
 
-[Collaborators](https://github.com/AdriPerse/climate-change/graphs/contributors)
+## [Collaborators](https://github.com/AdriPerse/climate-change/graphs/contributors)
 
 
