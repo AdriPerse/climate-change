@@ -1,6 +1,6 @@
 # Effects of climate change
 
-![alternative text](/data/fig1.png?raw=true "Title")
+![temp anomaly map](/data/fig1.png?raw=true "Title")
 
 ## Link to streamlit app: [climate change app](https://adriperse-climate-change-srcmain-vq7tuh.streamlit.app/).
 
@@ -34,6 +34,8 @@ This project was a part of our bootcamp in Constructor Learning. This was an ass
 ### [Nasa](https://data.giss.nasa.gov/gistemp/)
 ### [Fao](https://www.fao.org/faostat/en/#data/GT)
 ### [UN](https://www.sdgindex.org/)
+
+![polluters](/data/fig2.png?raw=true "Title")
 
 ## [Collaborators](https://github.com/AdriPerse/climate-change/graphs/contributors)
 
