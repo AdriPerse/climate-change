@@ -1,6 +1,6 @@
 # Effects of climate change
 
-![alternative text](fig1.png?raw=true "Title")
+![alternative text](/data/fig1.png?raw=true "Title")
 
 ## Link to streamlit app: [climate change app](https://adriperse-climate-change-srcmain-vq7tuh.streamlit.app/).
 
