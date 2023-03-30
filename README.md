@@ -1,5 +1,7 @@
 # Effects of climate change
 
+![alternative text](fig1.png?raw=true "Title")
+
 ## Link to streamlit app: [climate change app](https://adriperse-climate-change-srcmain-vq7tuh.streamlit.app/).
 
 #### -- Project Status:  Completed
@@ -25,14 +27,14 @@ We have chosen different values per country to better study the phenomenon and s
 * Pandas, phycharm
 * geojson
 
+## Project Description
+This project was a part of our bootcamp in Constructor Learning. This was an assingment for the first Group Data Challenge. 
+
 ## Sources:
 ### [Nasa](https://data.giss.nasa.gov/gistemp/)
 ### [Fao](https://www.fao.org/faostat/en/#data/GT)
 ### [UN](https://www.sdgindex.org/)
 
-collaboration between
+[Collaborators](https://github.com/AdriPerse/climate-change/graphs/contributors)
 
-Adriano Persegani
-Raquel Riquelme
-Ibrahima Ba
 
